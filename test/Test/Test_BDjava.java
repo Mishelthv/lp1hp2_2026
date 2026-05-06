@@ -4,7 +4,7 @@
  */
 package Test;
 import java.sql.*;
-import Util1.ConexionSingleton;
+import Util.ConexionSingleton;
 
 /**
  *
