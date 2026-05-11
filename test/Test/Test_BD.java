@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.Test_BDjava to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.Test_BD to edit this template
  */
 package Test;
 import java.sql.*;
@@ -10,28 +10,31 @@ import Util.ConexionSingleton;
  *
  * @author jeont
  */
-public class Test_BDjava {
+public class Test_BD {
 
    
     public static void main(String[] args) {
+         Test_BD t = new Test_BD();
+        t.testConexion();
         // TODO code application logic here
     }
     public void testConexion(){
         ConexionSingleton conn = new ConexionSingleton();
         try {
-          
             Connection connection = conn.getConnection();
-            if (connection != conn.getConnection()) {
-                System.out.println(" Conexion sastifactoria");  
-                
-                
+            if (connection != null && !connection.isClosed()) {
+                System.out.println("Conexion satisfactoria!!!");
             } else {
-                System.out.println(" No se puede establecer una conexion");
+                System.out.println("No se puede establecer conexion");
             }
         } catch (Exception e) {
-            System.out.println(" Error:" + e.getMessage());
+            System.out.println("Error:" + e.getMessage());
             e.printStackTrace();
+        }
+
     }
+    
+   
     }
-}
+        
     
